@@ -7,7 +7,7 @@ import { Footer } from "@/sections/Footer";
 function App() {
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div>
       <main>
         <Hero />
         <Navbar />
@@ -16,7 +16,7 @@ function App() {
         <Footer />
 
       </main>
-    </div>
+    </div >
   )
 }
 

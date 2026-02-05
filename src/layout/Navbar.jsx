@@ -1,3 +1,4 @@
+import { useState } from "react"
 import styles from "./navbar.module.css"
 import feedIcon from "../../src/assets/icons/feed-icon.svg"
 import jhLogo from "../../src/assets/icons/JH-logo.svg"
@@ -10,8 +11,10 @@ const navLinks = [
 ]
 
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <header>
+        <header className={`${styles.sticky}`}>
             <nav>
                 {/* container */}
                 <div className={`${styles.navContainer}`}>
@@ -20,17 +23,21 @@ export const Navbar = () => {
                     {/* Left Section */}
                     <div className={`${styles.leftSection}`}>
 
-                        <button className={`${styles.jhButton}`}>
+                        <a href="#hero" className={`${styles.jhButton}`}>
                             <img
                                 src={jhLogo}
                                 alt="Josiah Hans Logo"
-                                className={`${styles.jhIcon}`}
+                                className={`${styles.jhLogo}`}
                             />
-                        </button>
+                        </a>
 
-                        {/* Links */}
+                        {/* Desktop Only Links */}
                         {navLinks.map((link, index) => (
-                            <a href={link.href} key={index} className={`${styles.links} ${styles.desktopMenu}`}>
+                            <a
+                                href={link.href}
+                                key={index}
+                                className={`${styles.links}`}
+                            >
                                 {link.label}
                             </a>
                         ))}
@@ -38,8 +45,8 @@ export const Navbar = () => {
 
                     </div>
 
-                    {/* Feeds Button */}
-                    <a href="#feeds" className={`${styles.feedButton} ${styles.desktopMenu}`}>
+                    {/* Feeds Button (Desktop) */}
+                    <a href="#feeds" className={`${styles.feedButton}`}>
                         <img
                             src={feedIcon}
                             alt="Feeds"
@@ -51,15 +58,38 @@ export const Navbar = () => {
                     </a>
 
                     {/* Hamburger - Mobile Only */}
-                    <a className={`${styles.menuButton}`}>
+                    <button
+                        className={`${styles.menuButton}`}
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle Menu"
+                    >
                         <img
                             src={hamburgerIcon}
                             alt="Menu"
-                            className={`${styles.feedIcon}`}
+                            className={`${styles.menuIcon}`}
                         />
-                    </a>
+                    </button>
 
                 </div>
+
+                {/* Menu Overlay */}
+                <div className={`${styles.menuOverlay} ${isOpen ? styles.showMenu : ''}`} >
+                    <button onClick={() => setIsOpen(false)}>
+                        Close
+                    </button>
+                    {navLinks.map((link, index) => (
+                        <a
+                            href={link.href}
+                            key={index}
+                            className={`${styles.mobileFeedsLink}`}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+                    <a href="#feeds" className={`${styles.mobileFeedsLink}`} onClick={() => setIsOpen(false)}>Feeds</a>
+                </div>
+
             </nav>
         </header>
     );

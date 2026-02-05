@@ -18,9 +18,9 @@
   --shadow-10: rgba(0, 0, 0, 0.1);
 
   /* Glass */
-  --glass-bot: rgba(255, 255, 255, 0.8);
+  --glass-bot: rgba(255, 255, 255, 0.7);
   --bg-glass: linear-gradient(to bottom, var(--grey-100), var(--glass-bot));
-  --border-glass: rgba(255, 255, 255, 0.7);
+  --border-glass: rgba(255, 255, 255, 0.5);
 
   /* Blue */
   --blue-200: rgba(212, 228, 255, 1);
@@ -53,7 +53,7 @@
 
   /* Effects */
   --shadow-sm: 0px 4px 16px 0px var(--shadow-10);
-  --shadow-blue-sm: 0px 0px 16px 0px var(--blue-500);
+  --shadow-blue-sm: 0px 0px 16px 0px var(--blue-400);
 }
 
 @font-face {
@@ -106,6 +106,7 @@
     color: var(--black-400);
     font-family: "Open Sans", sans-serif;
   }
+
 
   .font-serif {
     font-family: "Playfair Display", serif;
