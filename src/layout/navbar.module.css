@@ -1,0 +1,96 @@
+/* Navbar */
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--24px);
+
+    padding: 1rem 1rem 1rem 2rem;
+    margin: 0 24px;
+
+    background-color: var(--bg-glass);
+    border: 2px solid var(--border-glass);
+    border-radius: var(--max);
+
+    backdrop-filter: blur(30px);
+    box-shadow: 0, 4px, 16px, 0, var(--shadow-sm);
+}
+
+/* Left Section */
+.leftSection {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.jhButton {
+    display: flex;
+    align-items: center;
+
+    height: 50px;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    border-radius: var(--max);
+}
+
+.links {
+    display: flex;
+    font-size: 0.875rem;
+    color: var(--black-400);
+    text-decoration: none;
+}
+
+/* Feed Button */
+
+.feedButton {
+    display: flex;
+    align-items: center;
+    gap: var(--12px);
+
+    height: 50px;
+    border: none;
+    padding: 0rem 1.5rem;
+    background-color: var(--black-400);
+    border-radius: var(--max);
+}
+
+.linkLabel {
+    display: inline;
+    font-size: 0.875rem;
+    color: var(--white);
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.menuButton {
+    display: none;
+    align-items: center;
+    gap: var(--12px);
+
+    height: 50px;
+    border: none;
+    padding: 0rem 1.5rem;
+    background-color: var(--black-400);
+    border-radius: var(--max);
+}
+
+
+
+@media (max-width: 640px) {
+    .linkLabel {
+        display: none;
+    }
+
+    .links,
+    .feedButton {
+        display: none;
+    }
+
+    .menuButton {
+        display: flex;
+    }
+}

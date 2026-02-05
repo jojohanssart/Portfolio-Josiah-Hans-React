@@ -37,7 +37,7 @@
   --40px: 2.5rem;
   --48px: 3rem;
   --64px: 4rem;
-  --max-spacing: 9999px;
+  --max: 9999px;
 
   /* Styles */
   --hero-section: linear-gradient(to bottom,
@@ -96,6 +96,9 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
   }
 
   body {
@@ -107,4 +110,9 @@
   .font-serif {
     font-family: "Playfair Display", serif;
   }
+}
+
+.navContainer {
+  display: inline-block;
+  padding: var(--64px);
 }
