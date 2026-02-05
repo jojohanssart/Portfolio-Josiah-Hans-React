@@ -13,6 +13,7 @@
   --grey-600: rgba(151, 151, 151, 1);
   --grey-700: rgba(135, 135, 135, 1);
   --grey-800: rgba(107, 107, 107, 1);
+  --grey-900: rgb(66, 66, 66);
 
   /* Shadow */
   --shadow-10: rgba(0, 0, 0, 0.1);
@@ -107,6 +108,9 @@
     font-family: "Open Sans", sans-serif;
   }
 
+  main {
+    height: 3000px;
+  }
 
   .font-serif {
     font-family: "Playfair Display", serif;

@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useEffect, useRef } from 'react';
+
 import styles from "./navbar.module.css"
 import feedIcon from "../../src/assets/icons/feed-icon.svg"
 import jhLogo from "../../src/assets/icons/JH-logo.svg"
@@ -12,6 +14,17 @@ const navLinks = [
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    // Auto close mobile menu overlay
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 640 && isOpen) {
+                setIsOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isOpen]);
 
     return (
         <header className={`${styles.sticky}`}>
@@ -74,20 +87,23 @@ export const Navbar = () => {
 
                 {/* Menu Overlay */}
                 <div className={`${styles.menuOverlay} ${isOpen ? styles.showMenu : ''}`} >
-                    <button onClick={() => setIsOpen(false)}>
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className={`${styles.closeButton}`}
+                    >
                         Close
                     </button>
                     {navLinks.map((link, index) => (
                         <a
                             href={link.href}
                             key={index}
-                            className={`${styles.mobileFeedsLink}`}
+                            className={`${styles.mobileNavLink}`}
                             onClick={() => setIsOpen(false)}
                         >
                             {link.label}
                         </a>
                     ))}
-                    <a href="#feeds" className={`${styles.mobileFeedsLink}`} onClick={() => setIsOpen(false)}>Feeds</a>
+                    <a href="#feeds" className={`${styles.mobileNavLink}`} onClick={() => setIsOpen(false)}>Feeds</a>
                 </div>
 
             </nav>
