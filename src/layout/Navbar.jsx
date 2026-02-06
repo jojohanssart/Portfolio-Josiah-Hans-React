@@ -61,7 +61,7 @@ export const Navbar = () => {
                     </div>
 
                     {/* Feeds Button (Desktop) */}
-                    <a href="#feeds" className={`${styles.feedButton}`}>
+                    {/* <a href="#feeds" className={`${styles.feedButton}`}>
                         <img
                             src={feedIcon}
                             alt="Feeds"
@@ -69,6 +69,34 @@ export const Navbar = () => {
                         />
                         <span className={`${styles.linkLabel}`}>
                             Feeds
+                        </span>
+                    </a> */}
+
+                    <a href="#feeds" className={`${styles.feedButtonMother}`}>
+                        <span className={`${styles.linkLabel}`}>
+                            <img
+                                src={feedIcon}
+                                alt="Feeds"
+                                className={`${styles.feedIcon}`}
+                            />
+                            <span>F</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>d</span>
+                            <span>s</span>
+                        </span>
+
+                        <span className={`${styles.linkLabel2}`}>
+                            <img
+                                src={feedIcon}
+                                alt="Feeds"
+                                className={`${styles.feedIcon}`}
+                            />
+                            <span>F</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>d</span>
+                            <span>s</span>
                         </span>
                     </a>
 
