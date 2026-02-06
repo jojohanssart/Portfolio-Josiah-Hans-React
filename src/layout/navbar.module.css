@@ -19,7 +19,6 @@
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: var(--shadow-sm);
-    transition: all 0.5s ease;
 }
 
 .sticky {
@@ -134,12 +133,12 @@
     gap: 2.5rem;
     justify-content: center;
     position: fixed;
-    top: -145px;
+    top: -135px;
     left: -2px;
     right: -2px;
 
     margin-top: 10px;
-    padding: 11rem 1.5rem 3.5rem 1.5rem;
+    padding: 11rem 3.5rem 30rem 1.5rem;
 
     background-image: var(--bg-glass);
     backdrop-filter: blur(8px);
@@ -162,9 +161,11 @@
 }
 
 /* navlink animation */
-.showMenu .mobileNavLink {
+.showMenu .mobileNavLink,
+.showMenu.socialDiv,
+.showMenu.lastUpdated {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .showMenu .mobileNavLink:nth-child(1) {
@@ -187,10 +188,27 @@
     transition-delay: 0.56s;
 }
 
+.showMenu .socials:nth-child(2) {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.67s;
+}
+
+.showMenu .socials:nth-child(1) {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.78s;
+}
+
+.showMenu .lastUpdated {
+    opacity: 1;
+    transition-delay: 0.89s;
+}
+
 /* navLinks */
 .mobileNavLink {
     display: inline;
-    text-align: center;
+    text-align: right;
 
     font-size: 1.5rem;
     font-weight: 600;
@@ -203,7 +221,8 @@
     transition: opacity 0.3s ease;
 }
 
-.mobileNavLink:hover {
+.mobileNavLink:hover,
+.socials:hover {
     color: var(--black-400);
     transform: scale(1.07);
 }
@@ -212,6 +231,7 @@
     font-family: 'Open Sans';
     font-size: 1rem;
     font-weight: 500;
+    text-align: right;
 
     background-color: transparent;
     color: var(--grey-600);
@@ -229,8 +249,51 @@
     color: var(--black-400);
 }
 
+/* Socials */
+
+.socialDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: right;
+}
+
+.socials {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.socialIcon {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(2%) saturate(15%) hue-rotate(323deg) brightness(90%) contrast(86%);
+}
+
+.socialIcon:hover {
+    transform: scale(1.1);
+    filter: none;
+}
+
+.lastUpdated {
+    display: flex;
+    justify-content: right;
+    font-size: 0.8rem;
+    color: var(--grey-800);
+    text-align: right;
+
+    opacity: 0;
+    transition: all 0.9s ease;
+}
+
 /* Media queries */
-@media (max-width: 580px) {
+@media (max-width: 600px) {
     .navContainer {
         margin: 0px 4px;
     }
