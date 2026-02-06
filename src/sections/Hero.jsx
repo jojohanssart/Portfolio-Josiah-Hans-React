@@ -1,6 +1,7 @@
 import styles from "./hero.module.css"
 import jhLogo from "../../src/assets/icons/JH-logo.svg"
 import jhAvatar1 from "../../src/assets/images/jh-avatar-1.png"
+import jhAvatar2 from "../../src/assets/images/jh-avatar-2.png"
 
 export const Hero = () => {
     return (
@@ -39,15 +40,19 @@ export const Hero = () => {
                         View My Work
                     </button>
                 </div>
-
                 <img
                     src={jhAvatar1}
                     alt="Josiah Hans Avatar"
                     className={`${styles.jhAvatar1}`}
                 />
+                <img
+                    src={jhAvatar2}
+                    alt="2nd Josiah Hans Avatar"
+                    className={`${styles.jhAvatar2}`}
+                />
 
             </div>
-            hero
+
         </section>
 
     );

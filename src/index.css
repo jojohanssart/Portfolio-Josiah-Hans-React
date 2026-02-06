@@ -93,21 +93,19 @@
 
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
 
+  html,
   body {
+    scroll-behavior: smooth;
+
     background-color: var(--background-color);
     color: var(--black-400);
-    font-family: "Open Sans", sans-serif;
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-  }
 
-  main {
-    height: 3000px;
+    font-family: "Open Sans", sans-serif;
+
+    position: relative;
+    margin: 0;
+    padding: 0;
   }
 
   .font-serif {
@@ -116,6 +114,5 @@
 }
 
 .navContainer {
-  display: inline-block;
   padding: var(--64px);
 }

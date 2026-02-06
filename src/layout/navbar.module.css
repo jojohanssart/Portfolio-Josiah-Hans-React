@@ -8,7 +8,7 @@
     position: relative;
 
     padding: 0.025rem 1rem 0.025rem 0.025rem;
-    margin: 0 16px;
+    margin: 0 16px 2rem 16px;
 
     min-width: 200px;
 
@@ -22,7 +22,9 @@
 }
 
 .sticky {
+    position: -webkit-sticky;
     position: sticky;
+
     top: 1rem;
     z-index: 1000;
     width: 100%;
@@ -156,13 +158,18 @@
     position: absolute;
 }
 
-.feedButtonMother:hover .linkLabel span,
-.feedButtonMother:hover.linkLabel img {
-    transform: translateY(1.2em);
+.feedButtonMother:hover .linkLabel img,
+.feedButtonMother:hover .linkLabel span {
+    transform: translateY(2em);
+}
+
+.feedButtonMother:hover .linkLabel2 img,
+.feedButtonMother:hover .linkLabel2 span {
+    transform: translateY(0);
 }
 
 .feedButtonMother .linkLabel img {
-    transition: 0.2s;
+    transition: 0.4s;
 }
 
 .feedButtonMother .linkLabel span:nth-child(2) {
@@ -202,7 +209,7 @@
 }
 
 .feedButtonMother .linkLabel2 img {
-    transition: 0.2s;
+    transition: 0.4s;
 }
 
 .feedButtonMother .linkLabel2 span:nth-child(2) {

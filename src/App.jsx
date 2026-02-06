@@ -7,16 +7,15 @@ import { Footer } from "@/sections/Footer";
 function App() {
 
   return (
-    <div>
-      <main>
-        <Hero />
-        <Navbar />
-        <About />
-        <Works />
-        <Footer />
 
-      </main>
-    </div >
+    <main >
+      <Hero />
+      <Navbar />
+      <div style={{ height: '200vh', background: 'transparent' }} />
+      <About />
+      <Works />
+      <Footer />
+    </main>
   )
 }
 

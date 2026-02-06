@@ -70,7 +70,7 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 16px 0px var(--blue-200);
 
-    transition: all 0.4s ease-out;
+    transition: background-color 0.4s ease-out;
 }
 
 .buttonCTA:hover {
@@ -84,8 +84,18 @@
 .jhAvatar1 {
     position: absolute;
 
-    top: 130px;
-    right: -40px;
+    z-index: 2;
+    visibility: hidden;
+    transform: scale(0.5);
+}
+
+.jhAvatar2 {
+    position: absolute;
+
+    top: -50px;
+    right: -180px;
+
+    transform: scale(0.5);
 }
 
 @media (min-width: 400px) {
@@ -98,6 +108,13 @@
 
     .heroContent h3 {
         max-width: none;
+    }
+
+    .jhAvatar2 {
+        position: absolute;
+
+        top: 10px;
+        right: -180px;
     }
 
 }
@@ -116,11 +133,51 @@
 
         max-width: none;
     }
+}
 
+@media (min-width: 600px) {
     .jhAvatar1 {
-        position: absolute;
+        visibility: visible;
+        top: -85px;
+        right: -80px;
 
-        top: 190px;
-        right: -40px;
+    }
+
+    .jhAvatar2 {
+        top: -80px;
+        right: -160px;
+    }
+}
+
+@media (min-width: 768px) {
+    .jhAvatar1 {
+        right: 50px;
+    }
+
+    .jhAvatar2 {
+        right: -60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .jhAvatar1 {
+        right: 120px;
+        transform: scale(0.55);
+    }
+
+    .jhAvatar2 {
+        right: -20px;
+        transform: scale(0.55);
+    }
+}
+
+@media (min-width: 1280px) {
+    .jhAvatar1 {
+        right: 320px;
+    }
+
+    .jhAvatar2 {
+        right: 180px;
+
     }
 }
