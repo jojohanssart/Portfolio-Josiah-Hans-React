@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 import styles from "./navbar.module.css"
 import feedIcon from "../../src/assets/icons/feed-icon.svg"
@@ -182,7 +182,7 @@ export const Navbar = () => {
 
                     </div>
                     <p className={`${styles.lastUpdated}`}>&#169; 2026 Josiah Hans &#x2022; Crafted with passion in Jakarta<br />
-                        Last updated: January 2025
+                        Last updated: February 2026
                     </p>
                 </div>
 

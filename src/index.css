@@ -43,14 +43,12 @@
   /* Styles */
   --hero-section: linear-gradient(to bottom,
       var(--blue-200) 0%,
-      var(--background-color) 75%,
-    );
+      var(--background-color) 75%);
 
-  --footer: linear-gradient(to bottom,
+  --footer-section: linear-gradient(to bottom,
       var(--background-color) 0%,
       var(--blue-500) 35%,
-      var(--black-400) 75%,
-    );
+      var(--black-400) 75%);
 
   /* Effects */
   --shadow-sm: 0px 4px 16px 0px var(--shadow-10);
@@ -97,15 +95,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
   }
 
   body {
     background-color: var(--background-color);
     color: var(--black-400);
     font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
   }
 
   main {

@@ -16,7 +16,7 @@
     border: 2px solid var(--border-glass);
     border-radius: var(--max);
 
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: var(--shadow-sm);
 }
@@ -68,6 +68,7 @@
 
 .links:hover {
     color: var(--black-400);
+    font-weight: 600;
 }
 
 /* Feed Button */
@@ -106,7 +107,7 @@
     margin-right: 0.5rem;
 }
 
-/* Feed Button Animation */
+/* Feed Button Animation | from UIVERSE */
 .feedButtonMother .linkLabel {
     display: flex;
     overflow: hidden;
@@ -226,7 +227,8 @@
     padding: 11rem 3.5rem 30rem 1.75rem;
 
     background-image: var(--bg-glass);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     border: 3px solid var(--border-glass);
     border-radius: 32px;

@@ -1,0 +1,126 @@
+.heroDiv {
+    padding: 3rem 0;
+}
+
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: relative;
+
+    padding: 2rem 3rem;
+    background-image: var(--hero-section);
+}
+
+.emailInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: var(--12px);
+}
+
+.heroContent h1 {
+    font-family: 'Open Sans Condensed';
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+
+    max-width: 170px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.heroContent h3 {
+    font-size: var(--12px);
+    line-height: var(--12px);
+    font-weight: 400;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 3vw + 1rem, 3.25rem);
+}
+
+.topSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+
+/* CTA Button */
+.buttonCTA {
+    color: var(--blue-500);
+    background-color: transparent;
+
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+    font-weight: 500;
+
+    height: 56px;
+    width: clamp(11.25rem, 20vw + 4rem, 16.25rem);
+
+    border: 1px solid var(--blue-500);
+    border-radius: var(--max);
+
+    box-sizing: border-box;
+    box-shadow: 0px 0px 16px 0px var(--blue-200);
+
+    transition: all 0.4s ease-out;
+}
+
+.buttonCTA:hover {
+    background-color: var(--blue-500);
+    color: var(--white);
+    border: none;
+    box-shadow: 0px 0px 80px 0px var(--blue-400);
+}
+
+/* Avatar */
+.jhAvatar1 {
+    position: absolute;
+
+    top: 130px;
+    right: -40px;
+}
+
+@media (min-width: 400px) {
+    .heroContent h1 {
+        font-size: 2.15rem;
+        line-height: 2.25rem;
+
+        max-width: none;
+    }
+
+    .heroContent h3 {
+        max-width: none;
+    }
+
+}
+
+@media (min-width: 420px) {
+    .heroContent h1 {
+        font-size: clamp(2.5rem, 4vw + 1.5rem, 4.5rem);
+        line-height: clamp(2.5rem, 4vw + 1.5rem, 4.5rem);
+
+        max-width: none;
+    }
+
+    .heroContent h3 {
+        font-size: clamp(1rem, 2vw + 0.25rem, 1.75rem);
+        line-height: clamp(1.125rem, 2vw + 0.5rem, 2rem);
+
+        max-width: none;
+    }
+
+    .jhAvatar1 {
+        position: absolute;
+
+        top: 190px;
+        right: -40px;
+    }
+}
