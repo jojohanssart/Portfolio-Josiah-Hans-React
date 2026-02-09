@@ -7,7 +7,6 @@ import { Footer } from "@/sections/Footer";
 function App() {
 
   return (
-
     <main >
       <Hero />
       <Navbar />
@@ -16,6 +15,7 @@ function App() {
       <Works />
       <Footer />
     </main>
+
   )
 }
 

@@ -14,6 +14,36 @@ const navLinks = [
 
 
 export const MenuOverlay = ({ isOpen, setIsOpen }) => {
+    // Disable scroll when overlay is opened | Gemini
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
+    // Close overlay with mobile back button | Gemini
+    useEffect(() => {
+        const handleBackButton = (event) => {
+            setIsOpen(false);
+        };
+
+        if (isOpen) {
+            window.history.pushState(null, '', window.location.href);
+
+            window.addEventListener('popstate', handleBackButton);
+        }
+
+        return () => {
+            window.removeEventListener('popstate', handleBackButton);
+        };
+    }, [isOpen, setIsOpen]);
+
+
     return (
         <div className={`${styles.menuOverlay} ${isOpen ? styles.showMenu : ''}`} >
             <button

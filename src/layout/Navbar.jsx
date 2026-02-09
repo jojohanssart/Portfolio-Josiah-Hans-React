@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 import styles from "./navbar.module.css"
 import feedIcon from "../../src/assets/icons/feed-icon.svg"
-import jhLogo from "../../src/assets/icons/JH-logo.svg"
+import jhLogo from "../../src/assets/icons/JH-logo-navbar.svg"
 import hamburgerIcon from "../../src/assets/icons/hamburger-icon.svg"
 
 const navLinks = [
@@ -30,7 +30,7 @@ export const Navbar = () => {
 
     return (
         <header className={`${styles.sticky}`}>
-            <nav>
+            <nav className={`${styles.wrapper}`}>
                 {/* container */}
                 <div className={`${styles.navContainer}`}>
 
@@ -43,6 +43,7 @@ export const Navbar = () => {
                                 src={jhLogo}
                                 alt="Josiah Hans Logo"
                                 className={`${styles.jhLogo}`}
+                                draggable="false"
                             />
                         </a>
 
@@ -78,6 +79,7 @@ export const Navbar = () => {
                                 src={feedIcon}
                                 alt="Feeds"
                                 className={`${styles.feedIcon}`}
+                                draggable="false"
                             />
                             <span>F</span>
                             <span>e</span>
@@ -110,6 +112,7 @@ export const Navbar = () => {
                             src={hamburgerIcon}
                             alt="Menu"
                             className={`${styles.menuIcon}`}
+                            draggable="false"
                         />
                     </button>
 
