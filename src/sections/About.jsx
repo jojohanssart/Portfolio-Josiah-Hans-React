@@ -1,5 +1,8 @@
 import styles from "./about.module.css"
 
+import { projects } from "../data/projectsData";
+import { CardInfo } from "../components/CardInfo";
+
 import nameCard from "../../src/assets/images/name-card-back.png"
 import adobeIllustrator from "../../src/assets/icons/adobe-illustrator-icon.svg"
 import procreate from "../../src/assets/icons/procreate-icon.svg"
@@ -9,6 +12,9 @@ import css3 from "../../src/assets/icons/css3-icon.svg"
 
 
 export const About = () => {
+    const feedProject = projects.find(p => p.title === "Feed");
+
+
     return <section
         id="about"
         className={`${styles.aboutSection}`}
@@ -91,6 +97,18 @@ export const About = () => {
                         />
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div>
+            right section
+            <div className={styles.featuredProject}>
+                <CardInfo
+                    logo={feedProject.logo}
+                    title={feedProject.title}
+                    category={feedProject.category}
+                    link={`/works/${feedProject.title.toLowerCase()}`}
+                />
             </div>
         </div>
     </section>;

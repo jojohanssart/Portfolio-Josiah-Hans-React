@@ -27,8 +27,8 @@
     border: 2px solid var(--border-glass);
     border-radius: var(--max);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     box-shadow: var(--shadow-sm);
 }
 

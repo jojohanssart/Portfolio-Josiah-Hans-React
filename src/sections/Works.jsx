@@ -1,3 +1,9 @@
+import { CardInfo } from "../components/CardInfo"
+
 export const Works = () => {
-    return <section>works</section>;
+    return <section>
+        works
+
+        <CardInfo />
+    </section>
 }
