@@ -1,0 +1,161 @@
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 644px;
+    gap: 1rem;
+
+    box-sizing: border-box;
+
+    padding: 0 1rem;
+}
+
+.nameCard {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: auto;
+    /* height: clamp(150px, 40vw, 370px); */
+    transform: rotate(2.5deg);
+    margin: 0.5rem 0.5rem;
+
+    border-radius: clamp(8px, 12px, 140px);
+    border: 1px solid var(--grey-200);
+    transition: all 0.3s ease-out;
+}
+
+.nameCard:hover {
+    transform: scale(1.02);
+    transform: rotate(none);
+
+    box-shadow: var(--shadow-sm);
+}
+
+/* .nameCard {
+    display: flex;
+    justify-content: space-between;
+
+    width: auto;
+    transform: rotate(2.5deg);
+    margin: 0 1.5rem;
+
+    border-radius: clamp(8px, 12px, 140px);
+    box-shadow: var(--shadow-sm);
+} */
+
+
+.greyLine {
+    display: inline-block;
+    border-top: 1px solid var(--grey-300);
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+}
+
+.contentGroup {
+    padding: 0 2rem;
+}
+
+.contentGroup p {
+    font-size: var(--12px);
+
+    text-align: justify;
+}
+
+.h2,
+.contentGroup p {
+    margin: 0;
+    padding: 0;
+}
+
+.h2 {
+    font-size: 1.25rem;
+    color: var(--blue-500);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--12px);
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.iconContainer {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.iconGroup {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 var(--12px);
+
+    border-radius: var(--max);
+    background-color: var(--grey-200);
+}
+
+@media (min-width: 425px) {
+    .profileContainer {
+        padding: 0 2rem;
+    }
+
+    .about {
+        flex-direction: row;
+    }
+
+    .skills {
+        flex-direction: row;
+        gap: 0.875rem;
+    }
+
+    .nameCard {
+        margin: 1.5rem 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .h2 {
+        font-size: 1.5rem;
+    }
+
+    .contentGroup p {
+        font-size: 0.875rem;
+    }
+
+    .iconContainer img {
+        height: 32px;
+        width: auto;
+    }
+
+    .profileContainer {
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1180px) {
+    .profileContainer {
+        border: 1px solid var(--grey-300);
+        border-radius: 16px;
+
+        padding: 2rem 2rem;
+        color: black;
+
+        padding-bottom: 4rem;
+    }
+}

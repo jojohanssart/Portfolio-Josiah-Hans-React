@@ -10,8 +10,8 @@ function App() {
     <main >
       <Hero />
       <Navbar />
-      <div style={{ height: '200vh', background: 'transparent' }} />
       <About />
+      <div style={{ height: '200vh', background: 'transparent' }} />
       <Works />
       <Footer />
     </main>
