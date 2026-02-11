@@ -1,6 +1,5 @@
 import { MenuOverlay } from "./NavbarMobileOverlay"
-import { useState } from "react"
-import { useEffect } from 'react';
+import { useState, useEffect } from "react"
 
 
 import styles from "./navbar.module.css"
@@ -16,6 +15,39 @@ const navLinks = [
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+
+    // useEffect by Gemini
+    useEffect(() => {
+        const controlNavbar = () => {
+            // Get current scroll position
+            const currentScrollY = window.scrollY;
+            const threshold = window.innerWidth > 1180
+                ? window.innerHeight + 220  // Large Screens
+                : window.innerWidth > 766
+                    ? window.innerHeight + 200  // Tablets / Laptops
+                    : window.innerHeight; // Mobile
+
+            if (currentScrollY > lastScrollY && currentScrollY > threshold) {
+                setShowNavbar(false); // Hide
+            } else {
+                setShowNavbar(true);  // Show (Scrolling UP)
+            }
+
+            // Update memory for next scroll event
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', controlNavbar);
+
+        // Cleanup function to remove listener when component unmounts
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+        };
+    }, [lastScrollY]);
+
 
     // Auto close mobile menu overlay
     useEffect(() => {
@@ -29,7 +61,7 @@ export const Navbar = () => {
     }, [isOpen]);
 
     return (
-        <header className={`${styles.sticky}`}>
+        <header className={`${styles.sticky} ${!showNavbar ? styles.navHidden : ''}`}>
             <nav className={`${styles.wrapper}`}>
                 {/* container */}
                 <div className={`${styles.navContainer}`}>

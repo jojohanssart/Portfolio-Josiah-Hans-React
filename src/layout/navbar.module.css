@@ -21,7 +21,7 @@
     flex: 1;
     width: 100%;
     min-width: 200px;
-    max-width: 1400px;
+    max-width: 1480px;
 
     background-image: var(--bg-glass);
     border: 2px solid var(--border-glass);
@@ -40,9 +40,13 @@
     top: 1rem;
     z-index: 1000;
 
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
+.navHidden {
+    transform: translateY(-100%);
+}
 
 /* Left Section */
 .leftSection {
@@ -69,6 +73,7 @@
 .jhButton:hover {
     /* transform: scale(1.08); */
     filter: brightness(0) saturate(100%) invert(23%) sepia(50%) saturate(7046%) hue-rotate(216deg) brightness(103%) contrast(106%);
+    filter: brightness(0);
 }
 
 .links {
@@ -150,12 +155,12 @@
 /* Media queries */
 @media (min-width: 425px) {
     .navContainer {
-        margin: 0 2rem 2rem 2rem;
+        margin: 0 1.5rem 2rem 1.5rem;
     }
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .linkLabel {
         display: none;
     }
@@ -172,7 +177,7 @@
 
 @media (min-width: 768px) {
     .navContainer {
-        margin: 0 4rem 4rem 4rem;
+        margin: 0 2.5rem 4rem 2.5rem;
     }
 }
 

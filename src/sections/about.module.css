@@ -1,9 +1,29 @@
+.aboutContainer {
+    display: flex;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 1400px;
+
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.featuredProject {
+    display: none;
+    flex: 1;
+
+    transition: all 0.3s ease;
+}
+
 .aboutSection {
     display: flex;
     flex-direction: column;
 
     align-items: center;
+    justify-content: stretch;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .profileContainer {
@@ -28,6 +48,8 @@
     /* height: clamp(150px, 40vw, 370px); */
     transform: rotate(2.5deg);
     margin: 0.5rem 0.5rem;
+
+    background-color: var(--white);
 
     border-radius: clamp(8px, 12px, 140px);
     border: 1px solid var(--grey-200);
@@ -149,6 +171,18 @@
 }
 
 @media (min-width: 1180px) {
+    .aboutSection {
+        padding: 0 4rem;
+    }
+
+    .aboutContainer {
+        justify-content: space-evenly;
+    }
+
+    .featuredProject {
+        display: flex;
+    }
+
     .profileContainer {
         border: 1px solid var(--grey-300);
         border-radius: 16px;
@@ -156,6 +190,6 @@
         padding: 2rem 2rem;
         color: black;
 
-        padding-bottom: 4rem;
+        padding-bottom: 0 4rem;
     }
 }
