@@ -27,7 +27,7 @@ export const Navbar = () => {
             const threshold = window.innerWidth > 1180
                 ? window.innerHeight + 220  // Large Screens
                 : window.innerWidth > 766
-                    ? window.innerHeight + 200  // Tablets / Laptops
+                    ? window.innerHeight + 100  // Tablets / Laptops
                     : window.innerHeight; // Mobile
 
             if (currentScrollY > lastScrollY && currentScrollY > threshold) {

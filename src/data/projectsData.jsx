@@ -3,10 +3,10 @@ import lieveeLogo from "../assets/icons/lievee-logo.svg"
 import startFridayLogo from "../assets/icons/start-friday-logo.svg"
 import feedLogo from "../assets/icons/JH-logo.svg"
 
-import ngaffeinImg from "../assets/images/ngaffein-img.png"
-import lieveeImg from "../assets/images/lievee-img.png"
-import startFridayImg from "../assets/images/start-friday-img.png"
-import feedImg from "../assets/images/feed-img.png"
+import ngaffeinImg from "../assets/images/ngaffein-img.webp"
+import lieveeImg from "../assets/images/lievee-img.webp"
+import startFridayImg from "../assets/images/start-friday-img.webp"
+import feedImg from "../assets/images/feed-img.webp"
 
 
 
