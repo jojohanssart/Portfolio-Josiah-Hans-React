@@ -15,7 +15,7 @@
     gap: var(--24px);
     position: relative;
 
-    padding: 0.025rem 1rem 0.025rem 0.025rem;
+    padding: 0.025rem 1rem 0.025rem 0.5rem;
     margin: 0 16px 2rem 16px;
 
     flex: 1;
@@ -24,12 +24,15 @@
     max-width: 1480px;
 
     background-image: var(--bg-glass);
-    border: 2px solid var(--border-glass);
+    /* background-color: var(--glass-bot); */
+    /* border-bottom: 1px solid var(--border-glass); */
     border-radius: var(--max);
 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    /* box-shadow: var(--shadow-sm); */
+
+    transition: all 0.5s ease;
 }
 
 .sticky {
@@ -181,6 +184,25 @@
     }
 }
 
+
+.entryAnimation {
+    opacity: 0;
+    /* Start hidden */
+    animation: navbarSlideDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Keep your keyframes definition at the bottom */
+@keyframes navbarSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* From Uiverse.io by KINGFRESS */
 /* Feed Button Animation */

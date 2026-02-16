@@ -63,19 +63,6 @@
     box-shadow: var(--shadow-sm);
 }
 
-/* .nameCard {
-    display: flex;
-    justify-content: space-between;
-
-    width: auto;
-    transform: rotate(2.5deg);
-    margin: 0 1.5rem;
-
-    border-radius: clamp(8px, 12px, 140px);
-    box-shadow: var(--shadow-sm);
-} */
-
-
 .greyLine {
     display: inline-block;
     border-top: 1px solid var(--grey-300);

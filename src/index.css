@@ -1,6 +1,7 @@
 :root {
   /* Semantic */
-  --background-color: rgba(245, 245, 247, 1);
+  /* --background-color: rgba(245, 245, 247, 1); */
+  --background-color: rgba(250, 250, 250, 1);
   --white: rgba(250, 250, 250, 1);
   --black-300: rgb(48, 48, 48);
   --black-390: rgba(26, 26, 26, 0.85);
@@ -21,9 +22,10 @@
   --shadow-10: rgba(0, 0, 0, 0.1);
 
   /* Glass */
-  --glass-bot: rgba(255, 255, 255, 0.7);
-  --bg-glass: linear-gradient(to bottom, var(--grey-100), var(--glass-bot));
-  --border-glass: rgba(255, 255, 255, 0.5);
+  --glass-top: rgba(250, 250, 250, 0.9);
+  --glass-bot: rgba(250, 250, 250, 0.7);
+  --bg-glass: linear-gradient(to bottom, var(--glass-top), var(--glass-bot));
+  --border-glass: rgba(255, 255, 255, 0.2);
 
   /* Blue */
   --blue-200: rgba(212, 228, 255, 1);

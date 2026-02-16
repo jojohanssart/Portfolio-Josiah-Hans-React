@@ -17,7 +17,14 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [playEntryAnim, setPlayEntryAnim] = useState(false);
 
+    // Entry Animation Gemini
+    useEffect(() => {
+        if (window.scrollY < 10) {
+            setPlayEntryAnim(true);
+        }
+    }, []);
 
     // useEffect by Gemini
     useEffect(() => {
@@ -64,7 +71,7 @@ export const Navbar = () => {
         <header className={`${styles.sticky} ${!showNavbar ? styles.navHidden : ''}`}>
             <nav className={`${styles.wrapper}`}>
                 {/* container */}
-                <div className={`${styles.navContainer}`}>
+                <div className={`${styles.navContainer} ${playEntryAnim ? styles.entryAnimation : ''}`}>
 
 
                     {/* Left Section */}

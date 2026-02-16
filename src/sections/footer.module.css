@@ -1,0 +1,79 @@
+.footerSection {
+  background-image: var(--footer-section);
+  padding: 3rem 2rem;
+}
+
+.footerContent {
+  padding: 200px 0 2rem 0;
+
+  font-size: 2.25rem;
+  color: var(--white);
+}
+
+.footerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 2.25rem;
+}
+
+.footerText p {
+  padding: 0;
+  margin: 0;
+
+  font-size: 0.875rem;
+  line-height: 0.9rem;
+}
+
+.impactDiff,
+.impact {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.starts,
+.startsDiff {
+  font-style: italic;
+}
+
+.impactDiff,
+.startsDiff {
+  font-family: "Playfair Display";
+}
+
+.here {
+  font-style: italic;
+  font-weight: 100;
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactInfo,
+.contactInfo a {
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contactInfo a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.contactIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  width: auto;
+
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7423%)
+    hue-rotate(306deg) brightness(96%) contrast(104%);
+}

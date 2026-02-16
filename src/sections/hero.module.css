@@ -51,7 +51,7 @@
     flex-direction: column;
     align-items: center;
 
-    gap: 2rem;
+    gap: 3rem;
     padding: 0px;
     margin: 0px;
 }
@@ -312,4 +312,89 @@
         right: -320px;
         transform: scale(1.2);
     }
+}
+
+
+/* Fade in Animation Gemini */
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        /* Move text up */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes softReveal {
+    from {
+        opacity: 0;
+        filter: blur(12px);
+        /* Start blurry */
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        /* Focus in */
+    }
+}
+
+.topSection h1 {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.topSection h3 {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.buttonCTA {
+    opacity: 0;
+    animation: slideUpFade 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+
+@keyframes softFadeIn {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        /* or 0.65 for bg */
+        filter: blur(0);
+    }
+}
+
+.offsetImages {
+    opacity: 1;
+}
+
+.avatarBg {
+    opacity: 0;
+    /* Start hidden */
+    animation: softFadeIn 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.jhAvatar2 {
+    opacity: 0;
+    animation: softFadeIn 0.8s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+.jhAvatar1 {
+    opacity: 0;
+    animation: softFadeIn 0.8s ease-out forwards;
+    animation-delay: 1.2s;
 }
