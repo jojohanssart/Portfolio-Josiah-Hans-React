@@ -1,20 +1,37 @@
-.footerSection {
+.section {
   background-image: var(--footer-section);
+
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.footerSection {
+  display: flex;
+  justify-content: start;
+  position: relative;
+  margin: auto;
+
   padding: 3rem 2rem;
+  max-width: 1400px;
 }
 
 .footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
   padding: 200px 0 2rem 0;
 
-  font-size: 2.25rem;
   color: var(--white);
 }
 
 .footerText {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  line-height: 2.25rem;
+  gap: 0.75rem;
+
+  font-size: 2.75rem;
+  line-height: 2.4rem;
 }
 
 .footerText p {
@@ -27,7 +44,7 @@
 
 .impactDiff,
 .impact {
-  font-weight: bold;
+  font-weight: 600;
   font-style: italic;
 }
 
@@ -54,11 +71,17 @@
 
 .contactInfo,
 .contactInfo a {
-  font-size: 1rem;
+  font-size: 0.8rem;
 
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  cursor: pointer;
+}
+
+.contactInfo:hover {
+  transform: scale(1.01);
 }
 
 .contactInfo a {
@@ -71,9 +94,95 @@
   align-items: center;
   justify-content: center;
 
-  height: 36px;
+  height: 24px;
   width: auto;
 
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7423%)
-    hue-rotate(306deg) brightness(96%) contrast(104%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7423%) hue-rotate(306deg) brightness(96%) contrast(104%);
+}
+
+.copyrightText {
+  font-size: 0.625rem;
+  color: var(--grey-500);
+}
+
+.card {
+  position: absolute;
+  width: auto;
+  height: 200px;
+
+  box-shadow: var(--shadow-sm);
+  visibility: hidden;
+
+  transition: all 0.5s ease-out;
+}
+
+.card:hover {
+  filter: blur(1px);
+}
+
+.cardFront {
+  bottom: 120px;
+  right: 64px;
+  transform: rotate(-2.5deg);
+}
+
+.cardBack {
+  bottom: 160px;
+  right: 90px;
+  transform: rotate(2.5deg);
+}
+
+@media (min-width: 768px) {
+  .footerText {
+    gap: 0.75rem;
+
+    font-size: 3.25rem;
+    line-height: 3rem;
+  }
+
+  .footerText p {
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
+
+
+
+  .card {
+    visibility: visible;
+  }
+
+  .footerSection {
+    padding: 3rem 4rem;
+  }
+
+
+  .contactInfo,
+  .contactInfo a {
+    font-size: 0.875rem;
+    gap: 0.6rem;
+  }
+
+  .contactIcon {
+    height: 28px;
+    width: auto;
+  }
+
+  .copyrightText {
+    font-size: 0.7rem;
+    color: var(--grey-500);
+  }
+}
+
+@media (min-width: 999px) {
+  .cardFront {
+    bottom: 120px;
+    right: 90px;
+    transform: scale(1.2) rotate(-2.5deg);
+  }
+
+  .cardBack {
+    bottom: 168px;
+    right: 120px;
+    transform: scale(1.2) rotate(2.5deg);
+  }
 }

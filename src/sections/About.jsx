@@ -13,16 +13,79 @@ import css3 from "../../src/assets/icons/css3-icon.svg";
 export const About = () => {
   const feedProject = projects.find((p) => p.title === "Feed");
 
+  const skillsData = [
+    {
+      group: 1,
+      name: "Adobe Illustrator",
+      desc: "General Graphic Design",
+      icon: adobeIllustrator,
+      styleClass: styles.adobeIllustrator,
+    },
+    {
+      group: 1,
+      name: "Procreate",
+      desc: "Digital Illustration | Visual Storytelling",
+      icon: procreate,
+      styleClass: styles.procreate,
+    },
+    {
+      group: 1,
+      name: "Figma",
+      desc: "UI/UX Design | Scalable, Responsive UI",
+      icon: figma,
+      styleClass: styles.figma,
+    },
+    {
+      group: 2,
+      name: "HTML 5",
+      desc: "Basic HTML Knowledge",
+      icon: html5,
+      styleClass: styles.html5,
+    },
+    {
+      group: 2,
+      name: "CSS 3",
+      desc: "Basic CSS Styling",
+      icon: css3,
+      styleClass: styles.css3,
+    },
+  ];
+
+  const renderSkill = (skill) => (
+    <div key={skill.name} className={styles.tooltipWrapper}>
+      <div className={styles.tooltip}>
+        <h4>{skill.name}</h4>
+        <p>{skill.desc}</p>
+      </div>
+
+      <img
+        src={skill.icon}
+        alt={skill.name}
+        className={skill.styleClass}
+        draggable="false"
+      />
+    </div>
+  );
+
   return (
     <section id="about" className={`${styles.aboutSection}`}>
       <div className={`${styles.aboutContainer}`}>
         <div className={`${styles.profileContainer}`}>
-          <img
-            src={nameCard}
-            alt="Josiah Hans name card"
-            className={`${styles.nameCard}`}
-            draggable="false"
-          />
+          <a
+            href="https://drive.google.com/file/d/1IjeLVRun2GoS_Zf5JYyHGpqjyXa2myPu/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Download CV"
+            type="application/pdf"
+            className={styles.cvLink}
+          >
+            <img
+              src={nameCard}
+              alt="Josiah Hans name card - Click to Download CV"
+              className={`${styles.nameCard}`}
+              draggable="false"
+            />
+          </a>
 
           <hr className={`${styles.greyLine}`}></hr>
 
@@ -41,47 +104,11 @@ export const About = () => {
             <h2 className={`${styles.h2}`}>Skills</h2>
             <div className={`${styles.iconContainer}`}>
               <div className={`${styles.iconGroup}`}>
-                <img
-                  src={adobeIllustrator}
-                  alt="Adobe Illustrator"
-                  aria-label="Adobe Illustrator"
-                  className={`${styles.adobeIllustrator}`}
-                  draggable="false"
-                />
-
-                <img
-                  src={procreate}
-                  alt="Procreate"
-                  aria-label="Procreate"
-                  className={`${styles.procreate}`}
-                  draggable="false"
-                />
-
-                <img
-                  src={figma}
-                  alt="Figma"
-                  aria-label="Figma"
-                  className={`${styles.figma}`}
-                  draggable="false"
-                />
+                {skillsData.filter((s) => s.group === 1).map(renderSkill)}
               </div>
 
               <div className={`${styles.iconGroup}`}>
-                <img
-                  src={html5}
-                  alt="HTML 5"
-                  aria-label="HTML 5"
-                  className={`${styles.html5}`}
-                  draggable="false"
-                />
-
-                <img
-                  src={css3}
-                  alt="CSS 3"
-                  aria-label="CSS 3"
-                  className={`${styles.css3}`}
-                  draggable="false"
-                />
+                {skillsData.filter((s) => s.group === 2).map(renderSkill)}
               </div>
             </div>
           </div>
