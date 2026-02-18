@@ -71,7 +71,14 @@ export const Navbar = () => {
         <header className={`${styles.sticky} ${!showNavbar ? styles.navHidden : ''}`}>
             <nav className={`${styles.wrapper}`}>
                 {/* container */}
-                <div className={`${styles.navContainer} ${playEntryAnim ? styles.entryAnimation : ''}`}>
+                <div className={`${styles.navContainer} ${playEntryAnim ? styles.entryAnimation : ''}`} 
+                style={{
+                backdropFilter: "blur(40px)",
+                WebkitBackdropFilter: "blur(40px)",
+                backgroundImage: "var(--bg-glass)", 
+                transform: "translate3d(0,0,0)",
+                }}
+                >
 
 
                     {/* Left Section */}

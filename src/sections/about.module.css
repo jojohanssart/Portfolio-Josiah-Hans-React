@@ -47,7 +47,6 @@
   height: auto;
   /* height: clamp(150px, 40vw, 370px); */
   transform: rotate(2.5deg);
-  margin: 0.5rem 0.5rem;
 
   background-color: var(--white);
 
@@ -162,7 +161,6 @@
   left: 50%;
   transform: translateX(-50%) translateY(10px);
 
-  background-image: var(--bg-glass);
   border-radius: 10px;
   color: var(--white);
 
@@ -174,9 +172,6 @@
   pointer-events: none;
 
   z-index: 10;
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 
   opacity: 0;
   visibility: hidden;

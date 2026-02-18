@@ -121,7 +121,19 @@
     padding: 0;
   }
 
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .font-serif {
     font-family: "Playfair Display", serif;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    gap: 4rem;
   }
 }

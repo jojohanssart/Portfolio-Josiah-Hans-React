@@ -53,7 +53,13 @@ export const About = () => {
 
   const renderSkill = (skill) => (
     <div key={skill.name} className={styles.tooltipWrapper}>
-      <div className={styles.tooltip}>
+      <div className={styles.tooltip}
+      style={{
+        backgroundImage: "var(--bg-glass)",
+        boxShadow: "var(--shadow-sm)",
+        backdropFilter: "blur(4px)",
+        WebkitBackdropFilter: "blur(4px)",
+      }}>
         <h4>{skill.name}</h4>
         <p>{skill.desc}</p>
       </div>
