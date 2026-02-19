@@ -18,7 +18,13 @@ export const Cards = ({ project }) => {
             <div className={styles.overlay} />
 
             {/* Info Bar */}
-            <div className={styles.infoBar}>
+            <div className={styles.infoBar}
+                style={{
+                    backdropFilter: "blur(10px)",
+                    WebkitBackdropFilter: "blur(10px)",
+                    backgroundImage: "var(--bg-glass)",
+                }}
+            >
                 <div className={styles.leftContent}>
                     <img src={project.logo} alt="" className={styles.projectLogo} />
                     <div className={styles.textGroup}>

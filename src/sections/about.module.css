@@ -1,6 +1,7 @@
 .aboutContainer {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
 
   width: 100%;
   max-width: 1400px;

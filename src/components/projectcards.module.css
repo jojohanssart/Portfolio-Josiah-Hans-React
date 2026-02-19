@@ -67,22 +67,22 @@
 
     background-image: var(--bg-glass);
     border: 1px solid var(--border-glass);
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     border-radius: 100px;
 
+    container-type: inline-size;
     box-shadow: var(--shadow-sm);
 }
 
 .leftContent {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
 .projectLogo {
     height: 28px;
     width: auto;
+    max-width: 80px;
 }
 
 .textGroup {
@@ -95,6 +95,7 @@
 
 .dot,
 .categoryText {
+    display: none;
     text-decoration: none;
 }
 
@@ -123,4 +124,12 @@
 
 .container:hover .arrowButton {
     width: 96px;
+}
+
+@container (min-width: 320px) {
+
+    .dot,
+    .categoryText {
+        display: flex;
+    }
 }

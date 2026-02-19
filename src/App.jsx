@@ -5,18 +5,16 @@ import { Works } from "@/sections/Works";
 import { Footer } from "@/sections/Footer";
 
 function App() {
-
   return (
-    <main >
+    <main>
       <Hero />
       <Navbar />
       <About />
-      <div style={{ height: '200vh', background: 'transparent' }} />
+      {/* <div style={{ height: "50vh", background: "transparent" }} /> */}
       <Works />
       <Footer />
     </main>
-
-  )
+  );
 }
 
 export default App
