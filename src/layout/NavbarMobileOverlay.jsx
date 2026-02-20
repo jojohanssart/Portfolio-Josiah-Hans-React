@@ -7,9 +7,9 @@ import gitHubIcon from "../../src/assets/icons/github-icon.svg";
 import styles from "./navbarmobileoverlay.module.css";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#works", label: "Selected Works" },
-  { href: "#contact", label: "Contact" },
+  { path: "/#about", label: "About" },
+  { path: "/#works", label: "Selected Works" },
+  { path: "/#contact", label: "Contact" },
 ];
 
 export const MenuOverlay = ({ isOpen, setIsOpen }) => {
@@ -52,14 +52,14 @@ export const MenuOverlay = ({ isOpen, setIsOpen }) => {
         Close
       </button>
       {navLinks.map((link, index) => (
-        <a
-          href={link.href}
+        <Link
+          to={link.path}
           key={index}
           className={`${styles.mobileNavLink}`}
           onClick={() => setIsOpen(false)}
         >
           {link.label}
-        </a>
+        </Link>
       ))}
       <Link
         to="/feed"
