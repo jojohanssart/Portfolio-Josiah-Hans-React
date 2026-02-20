@@ -1,0 +1,46 @@
+.backToTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: var(--max);
+    border: 1px solid var(--glass-bot);
+    background-color: var(--black-400);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.backToTopBtn:hover {
+    background-color: var(--blue-500);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.backToTopBtn:hover .upArrow {
+    transform: translateY(-3px);
+}
+
+.upArrow {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(208deg) brightness(103%) contrast(101%);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

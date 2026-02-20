@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import linkedInIcon from "../../src/assets/icons/linkedin-icon.svg";
 import gitHubIcon from "../../src/assets/icons/github-icon.svg";
@@ -60,13 +61,13 @@ export const MenuOverlay = ({ isOpen, setIsOpen }) => {
           {link.label}
         </a>
       ))}
-      <a
-        href="#feeds"
+      <Link
+        to="/feed"
         className={`${styles.mobileNavLink}`}
         onClick={() => setIsOpen(false)}
       >
         Feeds
-      </a>
+      </Link>
 
       {/* Socials */}
       <div className={`${styles.socialDiv}`}>

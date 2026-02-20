@@ -20,6 +20,13 @@ export const Hero = () => {
     }, 800);
   };
 
+  const scrollToWorks = () => {
+    const worksSection = document.getElementById('works');
+    if (worksSection) {
+      worksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className={`${styles.heroSection}`}>
       <div
@@ -86,7 +93,12 @@ export const Hero = () => {
               />
             </div>
           </div>
-          <button className={`${styles.buttonCTA}`}>Explore My Work</button>
+          <button
+            className={`${styles.buttonCTA}`}
+            onClick={scrollToWorks}
+          >
+            Explore My Work
+          </button>
         </div>
       </div>
     </section>
