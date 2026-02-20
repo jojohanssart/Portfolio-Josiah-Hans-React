@@ -9,9 +9,9 @@ import jhLogo from "../../src/assets/icons/JH-logo-navbar.svg"
 import hamburgerIcon from "../../src/assets/icons/hamburger-icon.svg"
 
 const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#works", label: "Selected Works" },
-    { href: "#contact", label: "Contact" },
+    { path: "/#about", label: "About" },
+    { path: "/#works", label: "Selected Works" },
+    { path: "/#contact", label: "Contact" },
 ]
 
 export const Navbar = () => {
@@ -96,13 +96,13 @@ export const Navbar = () => {
 
                         {/* Desktop Only Links */}
                         {navLinks.map((link, index) => (
-                            <a
-                                href={link.href}
+                            <Link
+                                to={link.path}
                                 key={index}
                                 className={`${styles.links}`}
                             >
                                 {link.label}
-                            </a>
+                            </Link>
                         ))}
 
 
