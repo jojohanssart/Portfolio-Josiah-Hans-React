@@ -1,6 +1,6 @@
 import { MenuOverlay } from "./NavbarMobileOverlay"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 import styles from "./navbar.module.css"
@@ -19,6 +19,14 @@ export const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [playEntryAnim, setPlayEntryAnim] = useState(false);
+
+    const { pathname } = useLocation();
+
+    const handleFeedClick = () => {
+        if (pathname === '/feed') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     // Entry Animation Gemini
     useEffect(() => {
@@ -85,7 +93,7 @@ export const Navbar = () => {
                     {/* Left Section */}
                     <div className={`${styles.leftSection}`}>
 
-                        <Link to="/" className={`${styles.jhButton}`}>
+                        <Link to="/#hero" className={`${styles.jhButton}`}>
                             <img
                                 src={jhLogo}
                                 alt="Josiah Hans Logo"
@@ -108,7 +116,11 @@ export const Navbar = () => {
 
                     </div>
 
-                    <Link to="/feed" className={`${styles.feedButtonMother}`}>
+                    <Link
+                        to="/feed"
+                        onClick={handleFeedClick}
+                        className={`${styles.feedButtonMother}`}
+                    >
                         <span className={`${styles.linkLabel}`}>
                             <img
                                 src={feedIcon}

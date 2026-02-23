@@ -3,10 +3,10 @@ import lieveeLogo from "../assets/icons/lievee-logo.svg"
 import startFridayLogo from "../assets/icons/start-friday-logo.svg"
 import feedLogo from "../assets/icons/JH-logo.svg"
 
-import ngaffeinImg from "../assets/images/ngaffein-img.webp"
-import lieveeImg from "../assets/images/lievee-img.webp"
-import startFridayImg from "../assets/images/start-friday-img.webp"
-import feedImg from "../assets/images/feed-img.webp"
+// import ngaffeinImg from "../assets/images/ngaffein-img.webp"
+// import lieveeImg from "../assets/images/lievee-img.webp"
+// import startFridayImg from "../assets/images/start-friday-img.webp"
+// import feedImg from "../assets/images/feed-img.webp"
 
 
 
@@ -16,7 +16,7 @@ export const projects = [
         title: "Ngaffein",
         category: "Product Design",
         logo: ngaffeinLogo,
-        mockup: ngaffeinImg,
+        mockup: "https://res.cloudinary.com/dt8nalx2f/image/upload/f_auto,q_auto/v1771813174/ngaffein-img_omdjxf.png",
         isLarge: true
     },
     {
@@ -24,7 +24,7 @@ export const projects = [
         title: "Lievee",
         category: "UI/UX Design",
         logo: lieveeLogo,
-        mockup: lieveeImg,
+        mockup: "https://res.cloudinary.com/dt8nalx2f/image/upload/f_auto,q_auto/v1771813114/lievee-img_ti0wdc.png",
         isLarge: false
     },
     {
@@ -32,7 +32,7 @@ export const projects = [
         title: "Start Friday",
         category: "Social Media",
         logo: startFridayLogo,
-        mockup: startFridayImg,
+        mockup: "https://res.cloudinary.com/dt8nalx2f/image/upload/f_auto,q_auto/v1771813770/start-friday-img_f2t8ai.webp",
         isLarge: false
     },
     {
@@ -40,7 +40,7 @@ export const projects = [
         title: "Feed",
         category: "Feed",
         logo: feedLogo,
-        mockup: feedImg,
+        mockup: "https://res.cloudinary.com/dt8nalx2f/image/upload/f_auto,q_auto/v1771813148/feed-img_ocrfym.png",
         isLarge: false
     }
 ];

@@ -8,7 +8,7 @@
     height: 64px;
 
     border-radius: var(--max);
-    border: 1px solid var(--glass-bot);
+    border: 1px solid var(--grey-900);
     background-color: var(--black-400);
 
     display: flex;

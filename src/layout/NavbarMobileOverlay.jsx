@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import linkedInIcon from "../../src/assets/icons/linkedin-icon.svg";
 import gitHubIcon from "../../src/assets/icons/github-icon.svg";
@@ -12,7 +12,11 @@ const navLinks = [
   { path: "/#contact", label: "Contact" },
 ];
 
+
+
 export const MenuOverlay = ({ isOpen, setIsOpen }) => {
+  const location = useLocation();
+
   // Disable scroll when overlay is opened | Gemini
   useEffect(() => {
     if (isOpen) {
@@ -43,6 +47,17 @@ export const MenuOverlay = ({ isOpen, setIsOpen }) => {
     };
   }, [isOpen, setIsOpen]);
 
+  const handleFeedClick = () => {
+    setIsOpen(false);
+
+    if (location.pathname === "/feed") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }
+
   return (
     <div className={`${styles.menuOverlay} ${isOpen ? styles.showMenu : ""}`}>
       <button
@@ -64,7 +79,7 @@ export const MenuOverlay = ({ isOpen, setIsOpen }) => {
       <Link
         to="/feed"
         className={`${styles.mobileNavLink}`}
-        onClick={() => setIsOpen(false)}
+        onClick={handleFeedClick}
       >
         Feeds
       </Link>

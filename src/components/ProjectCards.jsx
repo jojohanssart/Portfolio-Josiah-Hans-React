@@ -1,13 +1,23 @@
 import styles from "./projectcards.module.css";
 import arrowIcon from "../assets/icons/arrow-icon.svg";
+import { Link } from "react-router-dom";
 
 export const Cards = ({ project }) => {
     if (!project) return null;
 
-    const link = `/works/${project.title.toLowerCase()}`;
+    const link = project.title === "Feed" ? "/feed" : `/works/${project.title.toLowerCase()}`;
+
+    const handleClick = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    };
 
     return (
-        <a href={link} className={styles.container} aria-label={`View ${project.title}`}>
+        <Link
+            to={link}
+            onClick={handleClick}
+            className={styles.container}
+            aria-label={`View ${project.title}`}
+        >
 
             {/* Project Thumbnail */}
             <div
@@ -37,6 +47,6 @@ export const Cards = ({ project }) => {
                     <img src={arrowIcon} alt="" className={styles.arrowIcon} />
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };

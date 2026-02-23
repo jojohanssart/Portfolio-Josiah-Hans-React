@@ -7,14 +7,12 @@ import { Feed } from "./Feed";
 
 import { BackToTop } from "./components/BackToTop";
 
-
-import { Routes, Route } from "react-router-dom"
-
+import { Routes, Route } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
-      <div style={{
+      {/* <div style={{
         backgroundColor: "var(--black-500)",
         height: "300px",
         paddingTop: "4rem",
@@ -25,7 +23,7 @@ const Home = () => {
         marginBottom: "-80px",
       }}>
         Work in progress!
-      </div>
+      </div> */}
       <Hero />
       <Navbar />
       <About />
@@ -42,12 +40,18 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/feed" element={<Feed />} />
 
-        <Route path="*" element={<div style={{ padding: "5rem", fontSize: "2rem" }}>404: Route Not Found! Current URL doesn't match "/" or "/feed"</div>} />
+        <Route
+          path="*"
+          element={
+            <div style={{ padding: "5rem", fontSize: "2rem" }}>
+              404: Route Not Found! Current URL doesn't match "/" or "/feed"
+            </div>
+          }
+        />
       </Routes>
       <BackToTop />
-
     </main>
   );
 }
 
-export default App
+export default App;
