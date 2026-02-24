@@ -12,7 +12,7 @@ import { Routes, Route } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      {/* <div style={{
+      <div style={{
         backgroundColor: "var(--black-500)",
         height: "300px",
         paddingTop: "4rem",
@@ -23,7 +23,7 @@ const Home = () => {
         marginBottom: "-80px",
       }}>
         Work in progress!
-      </div> */}
+      </div>
       <Hero />
       <Navbar />
       <About />

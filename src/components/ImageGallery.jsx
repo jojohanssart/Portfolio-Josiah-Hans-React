@@ -1,5 +1,6 @@
 import styles from "./imagegallery.module.css";
 import { motion } from "framer-motion";
+import { feedImages } from "../data/feedData";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,27 +26,60 @@ const itemVariants = {
 
 export const ImageGallery = () => {
   return (
-    <div>
-      <div className={`${styles.div}`}>
-        <div>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-          >
-            <motion.h2 className={`${styles.headline}`} variants={itemVariants}>
-              Feed
-            </motion.h2>
+    <section className={styles.container}>
+      <div className={styles.contentWrapper}>
+        {/* Header Section */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          <div className={styles.headerWrapper}>
+            <motion.div className={styles.header} variants={itemVariants}>
+              <h2 className={styles.h2}>Feed</h2>
+            </motion.div>
+          </div>
 
-            <motion.p className={`${styles.feedDesc}`} variants={itemVariants}>
-              A collection of Design explorations, visual experiments, and
-              work-in-progress projects.
-            </motion.p>
-          </motion.div>
-        </div>
-        <motion.div></motion.div>
-        Image Gallery
+          <motion.p className={styles.feedDesc} variants={itemVariants}>
+            A collection of design explorations, visual experiments, and
+            work-in-progress.
+          </motion.p>
+        </motion.div>
+
+        {/* Masonry Grid Section */}
+        <motion.div
+          className={styles.masonryGrid}
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+        >
+          {feedImages.map((item) => (
+            <motion.div
+              key={item.id}
+              className={styles.imageWrapper}
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.55 }}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className={styles.image}
+                loading="lazy"
+              />
+
+              {/* Hover Overlay */}
+              <div className={styles.overlay}>
+                <div className={styles.overlayContent}>
+                  <h3 className={styles.imageTitle}>{item.title}</h3>
+                  <span className={styles.imageYear}>{item.year}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
